@@ -368,4 +368,4 @@ input.error { border-color: #f87171; }
 @media (min-width: 480px) {
   .screen { border-left: 1px solid var(--border); border-right: 1px solid var(--border); }
   body { background: #080810; }
-}
+  }
