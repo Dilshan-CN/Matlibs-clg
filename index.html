@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Mad Libs 🎭</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HOME SCREEN -->
+  <div id="screen-home" class="screen active">
+    <div class="home-top">
+      <div class="app-icon">🎭</div>
+      <h1>Mad Libs</h1>
+      <p class="tagline">Fill in the blanks.<br>Laugh out loud.</p>
+    </div>
+    <div class="home-bottom">
+      <button class="btn-primary" onclick="goTo('screen-pick')">Start a Story ✨</button>
+      <button class="btn-ghost" onclick="goTo('screen-saved')">📚 Saved Stories</button>
+    </div>
+  </div>
+
+  <!-- TEMPLATE PICKER -->
+  <div id="screen-pick" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="goTo('screen-home')">←</button>
+      <h2>Pick a Story</h2>
+    </div>
+    <div class="card-list">
+      <div class="story-card" onclick="pickTemplate('space')">
+        <span class="card-emoji">🚀</span>
+        <div>
+          <div class="card-title">Space Adventure</div>
+          <div class="card-sub">Blast off into the cosmos</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="story-card" onclick="pickTemplate('school')">
+        <span class="card-emoji">🏫</span>
+        <div>
+          <div class="card-title">Crazy School Day</div>
+          <div class="card-sub">Class is now in chaos</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+      <div class="story-card" onclick="pickTemplate('fantasy')">
+        <span class="card-emoji">🧙</span>
+        <div>
+          <div class="card-title">Fantasy Quest</div>
+          <div class="card-sub">Heroes, magic, and mayhem</div>
+        </div>
+        <span class="card-arrow">›</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INPUT SCREEN -->
+  <div id="screen-input" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="goTo('screen-pick')">←</button>
+      <h2 id="input-title">Fill in the Blanks</h2>
+    </div>
+    <div class="input-scroll">
+      <p class="input-hint">Be creative — the weirder, the better! 🤪</p>
+      <div class="field">
+        <label>🧱 A Noun</label>
+        <input id="f-noun" type="text" placeholder="e.g. banana, rocket, sock">
+      </div>
+      <div class="field">
+        <label>🏃 A Verb</label>
+        <input id="f-verb" type="text" placeholder="e.g. explode, dance, sneeze">
+      </div>
+      <div class="field">
+        <label>✨ An Adjective</label>
+        <input id="f-adj" type="text" placeholder="e.g. slimy, enormous, purple">
+      </div>
+      <div class="field">
+        <label>📍 A Place</label>
+        <input id="f-place" type="text" placeholder="e.g. the moon, a taco stand">
+      </div>
+      <div class="field">
+        <label>🐾 An Animal</label>
+        <input id="f-animal" type="text" placeholder="e.g. penguin, T-Rex, hamster">
+      </div>
+      <div class="field">
+        <label>😂 A Funny Word</label>
+        <input id="f-funny" type="text" placeholder="e.g. blorp, snazzy, kerfuffle">
+      </div>
+      <div id="input-error" class="error-msg hidden">⚠️ Please fill in all the blanks!</div>
+    </div>
+    <div class="screen-footer">
+      <button class="btn-primary" onclick="generateStory()">Generate Story 🎲</button>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="screen-result" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="goTo('screen-input')">←</button>
+      <h2>Your Story</h2>
+    </div>
+    <div class="result-scroll">
+      <div class="story-result-card">
+        <div id="result-emoji" class="result-emoji">🚀</div>
+        <h3 id="result-title"></h3>
+        <p id="result-body"></p>
+      </div>
+    </div>
+    <div class="screen-footer result-actions">
+      <button class="btn-icon" onclick="saveStory()" title="Save">💾</button>
+      <button class="btn-icon" onclick="shareStory()" title="Share">📤</button>
+      <button class="btn-primary flex1" onclick="generateStory()">Again 🎲</button>
+      <button class="btn-ghost-sm" onclick="goTo('screen-home')">🏠</button>
+    </div>
+  </div>
+
+  <!-- SAVED SCREEN -->
+  <div id="screen-saved" class="screen">
+    <div class="screen-header">
+      <button class="btn-back" onclick="goTo('screen-home')">←</button>
+      <h2>Saved Stories</h2>
+    </div>
+    <div id="saved-list" class="saved-list"></div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
