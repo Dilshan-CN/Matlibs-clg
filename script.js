@@ -9,7 +9,7 @@ document.addEventListener('focusin', (e) => {
   }
 });
 
-// ── Templates ─────────────────────────────content://com.android.externalstorage.documents/tree/primary%3Ac%2B%2B%2FReact%2FPik::primary:c++/React/Pik/script.js─────────────────────────────────
+// ── Templates ──────────────────────────────────────────────────────────────
 const TEMPLATES = {
   space: {
     emoji: '🚀',
@@ -53,6 +53,81 @@ const TEMPLATES = {
       Together they founded the kingdom of ${w.funny}-land, where every citizen
       was required to ${w.verb} at sunrise and keep a pet ${w.animal}.
       And they lived ${w.adj}ly ever after.
+    `
+  },
+  pirate: {
+    emoji: '🏴‍☠️',
+    title: 'Pirate Voyage',
+    story: (w) => `
+      Captain ${w.noun} of the ship "${w.funny}" sailed the ${w.adj} seas
+      in search of the legendary treasure of ${w.place}.
+      The crew — mostly ${w.animal}s in tiny hats — refused to ${w.verb}
+      unless they were paid in ${w.noun}s.
+      A rival pirate appeared out of nowhere screaming "${w.funny}!"
+      and throwing ${w.adj} ${w.noun}s at the deck.
+      Just as all hope was lost, the ship's pet ${w.animal} began to ${w.verb}
+      so magnificently that the enemy surrendered on the spot.
+      The treasure turned out to be a single, very ${w.adj} ${w.noun}. Worth it.
+    `
+  },
+  superhero: {
+    emoji: '🦸',
+    title: 'Superhero Chaos',
+    story: (w) => `
+      The city of ${w.place} was in danger! Villain Doctor ${w.funny}
+      had stolen every ${w.noun} in town and replaced them with ${w.adj} ${w.animal}s.
+      Enter: ${w.adj} Man — hero with the power to ${w.verb} at supersonic speed.
+      "Your ${w.noun} ends here!" shouted the hero, landing with a ${w.adj} thud.
+      The villain launched a giant ${w.noun} cannon, but ${w.adj} Man simply
+      began to ${w.verb} — confusing everyone long enough to save the day.
+      The mayor awarded them the Golden ${w.noun} for bravery.
+      Doctor ${w.funny} vowed revenge, but mostly just went home for a nap.
+    `
+  },
+  chef: {
+    emoji: '👨‍🍳',
+    title: 'Cooking Disaster',
+    story: (w) => `
+      Chef ${w.noun} had one hour to cook a ${w.adj} meal for the king of ${w.place}.
+      The recipe called for three cups of ${w.funny}, a ${w.adj} ${w.animal},
+      and exactly one ${w.noun} — lightly toasted.
+      Everything went wrong when the oven began to ${w.verb} uncontrollably.
+      The sous-chef tripped and spilled ${w.funny} all over the dessert.
+      In a panic, Chef ${w.noun} decided to ${w.verb} the entire dish
+      and serve it as a deconstructed masterpiece.
+      The king took one bite, whispered "${w.funny}," and immediately
+      awarded the restaurant five ${w.adj} stars.
+    `
+  },
+  detective: {
+    emoji: '🕵️',
+    title: 'Mystery at Midnight',
+    story: (w) => `
+      Detective ${w.noun} arrived at ${w.place} to investigate
+      the mysterious disappearance of a ${w.adj} ${w.animal}.
+      The only clue: a sticky note reading "${w.funny}" left on a ${w.noun}.
+      The prime suspect was a ${w.adj} butler who could only ${w.verb}
+      when questioned — never speak.
+      After hours of intense ${w.verb}-ing, the detective discovered
+      the ${w.animal} had simply wandered into a nearby ${w.noun} factory.
+      "Elementary," said Detective ${w.noun}, adjusting their ${w.adj} hat.
+      The case was closed. The ${w.funny} was never explained.
+    `
+  },
+  timetravel: {
+    emoji: '⏰',
+    title: 'Time Travel Trouble',
+    story: (w) => `
+      ${w.noun} accidentally built a time machine out of a ${w.adj} ${w.animal}
+      and a broken ${w.noun} from ${w.place}.
+      The first jump landed them in ancient times, where everyone expected
+      them to ${w.verb} for the emperor's entertainment.
+      They accidentally introduced "${w.funny}" to history —
+      historians are still confused about this.
+      Jumping to the future, they found a ${w.adj} civilisation that worshipped
+      a giant golden ${w.noun} and communicated entirely by ${w.verb}-ing.
+      To get home, they traded their last ${w.funny} to a time cop named ${w.noun}.
+      Totally worth it.
     `
   }
 };
